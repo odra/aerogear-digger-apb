@@ -1,0 +1,21 @@
+Manifest-Version: 1.0
+Built-By: lrossett
+Created-By: Apache Maven
+Build-Jdk: 1.8.0_172
+Extension-Name: kryptowire
+Specification-Title: Jenkins plugin that sends a mobile app binary to 
+ the kryptowire platform for security analysis
+Implementation-Title: kryptowire
+Implementation-Version: 0.2
+Group-Id: io.jenkins.plugins
+Short-Name: kryptowire
+Long-Name: Kryptowire Plugin
+Url: https://github.com/jenkinsci/kryptowire-plugin/tree/master/docs
+Compatible-Since-Version: 2.0.0
+Plugin-Version: 0.2
+Hudson-Version: 1.642.3
+Jenkins-Version: 1.642.3
+Plugin-Dependencies: workflow-step-api:2.0,job-dsl:1.58;resolution:=op
+ tional
+Plugin-Developers: Aerogear:aerogear:
+

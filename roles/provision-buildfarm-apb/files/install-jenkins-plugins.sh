@@ -23,14 +23,21 @@ readonly jenkins_pod=$(oc get pods -n ${namespace} | grep ${jenkins_name}- | awk
 
 echo "Copying Jenkins plugins from /jenkins-plugins/"
 
+#android-signing plugin
 oc cp -n ${namespace} /tmp/jenkins-plugins/android-signing ${jenkins_pod}:/var/lib/jenkins/plugins/
 oc cp -n ${namespace} /tmp/jenkins-plugins/android-signing.jpi ${jenkins_pod}:/var/lib/jenkins/plugins/
+#openshift-sync plugin
 oc cp -n ${namespace} /tmp/jenkins-plugins/openshift-sync ${jenkins_pod}:/var/lib/jenkins/plugins/
 oc cp -n ${namespace} /tmp/jenkins-plugins/openshift-sync.hpi ${jenkins_pod}:/var/lib/jenkins/plugins/
+#xcode-plugin
 oc cp -n ${namespace} /tmp/jenkins-plugins/xcode-plugin ${jenkins_pod}:/var/lib/jenkins/plugins/
 oc cp -n ${namespace} /tmp/jenkins-plugins/xcode-plugin.hpi ${jenkins_pod}:/var/lib/jenkins/plugins/
+#ssh-slaves plugin
 oc cp -n ${namespace} /tmp/jenkins-plugins/ssh-slaves ${jenkins_pod}:/var/lib/jenkins/plugins/
 oc cp -n ${namespace} /tmp/jenkins-plugins/ssh-slaves.jpi ${jenkins_pod}:/var/lib/jenkins/plugins/
+#kryptowire plugin
+oc cp -n ${namespace} /tmp/jenkins-plugins/kryptowire ${jenkins_pod}:/var/lib/jenkins/plugins/
+oc cp -n ${namespace} /tmp/jenkins-plugins/kryptowire.hpi ${jenkins_pod}:/var/lib/jenkins/plugins/
 
 echo "Scaling down Jenkins"
 
